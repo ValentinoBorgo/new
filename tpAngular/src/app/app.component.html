@@ -1,0 +1,16 @@
+<header>
+        <nav>
+            <a routerLink="/inicio">Inicio</a>
+            <a routerLink="/grafico">Ventas</a>
+            <a routerLink="/tabla">Tabla de Ventas</a>
+            <a routerLink="/clientes">Clientes</a>
+            <a routerLink="/sucursales">Sucursales</a>
+            <a *ngIf="!isLoggedIn" routerLink="/login">Login</a>
+            <a *ngIf="!isLoggedIn" routerLink="/registro">Registro</a>
+            <button *ngIf="isLoggedIn" (click)="onLogout()">Cerrar sesión</button>
+        </nav>
+    </header>
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+    
