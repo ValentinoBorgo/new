@@ -69,6 +69,13 @@ export class SucursalesComponent implements OnInit {
 
   guardarSucursal() {
     if (this.nuevaSucursal.nombre.trim() && this.nuevaSucursal.direccion.trim()) {
+
+      if (this.nuevaSucursal.cantidadEmpleados < 0) {
+        console.error('La cantidad de empleados no puede ser menor a 0');
+        alert('La cantidad de empleados no puede ser menor a 0');
+        return;
+      }
+
       const operacion = this.modoEdicion
         ? this.sucursalService.actualizarSucursal(this.nuevaSucursal)
         : this.sucursalService.agregarSucursal(this.nuevaSucursal);

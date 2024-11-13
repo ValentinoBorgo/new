@@ -17,10 +17,11 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'registro', component: RegistroComponent},
   { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '**', redirectTo: '/inicio' }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
